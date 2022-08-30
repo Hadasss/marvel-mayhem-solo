@@ -1,0 +1,88 @@
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+header-img {
+  display: block;
+  max-width: 230px;
+  max-height: 95px;
+  width: auto;
+  height: auto;
+}
+
+.hero-name-display h3 {
+  color: red;
+  text-shadow: 2px 2px black;
+  font-size: 200%;
+}
+
+.hero-name-display p {
+  color: green;
+  text-shadow: 1px 1px white;
+}
+
+.flex-wrap button {
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+.button-title {
+  color: yellow;
+  text-shadow: 2px 2px black;
+  font-size: 150%;
+}
+
+.comics-li,
+.events-li,
+.movies-li {
+  color: white;
+  text-shadow: 2px 2px red;
+}
+
+.teams-container {
+  padding: 8px;
+  border: 4px solid black;
+  margin: 0.5rem;
+}
+
+.build-team {
+  flex-direction: column;
+}
+
+.build-title {
+  font-size: 150%;
+  color: blue;
+  text-shadow: 2px 2px white;
+  text-align: center;
+}
+
+.build-team ul li {
+  color: black;
+  text-shadow: 2px 2px rgb(116, 177, 116);
+}
+
+.add-hero-btn,
+.add-team {
+  background-color: red;
+  text-shadow: 1px 1px white;
+  box-shadow: 2px 2px 3px black;
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+
+.teamName,
+.add-hero {
+  box-shadow: 2px 2px 3px black;
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+
+.team-name-title {
+  color: red;
+  text-shadow: 1px 1px white;
+  font-size: 130%;
+}
