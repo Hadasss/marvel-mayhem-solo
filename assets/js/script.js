@@ -35,11 +35,12 @@ let hero;
 
 let teams = [];
 
+// create localStorage for scoreboard
 if (localStorage.getItem("teams")) {
   teams = JSON.parse(localStorage.getItem("teams"));
 }
 
-// fetch request to display hero by search key. Marvel API.
+// function to display hero by search key. fetch from Marvel API.
 // dynamically generating elements to display user choice.
 const getHeroName = function (searchInput) {
   let url =
@@ -51,11 +52,8 @@ const getHeroName = function (searchInput) {
     .then(function (response) {
       if (response.ok) {
         response.json().then(function (data) {
-          if (!data) {
-            return null;
-          }
-
-          if (data == null) {
+          console.log(data);
+          if (data.data.count == 0) {
             noHeroModal.style.display = "block";
 
             modalHeroOkBtn.onclick = function () {
@@ -67,18 +65,18 @@ const getHeroName = function (searchInput) {
                 noHeroModal.style.display = "none";
               }
             };
+          } else {
+            heroNameTitle.textContent = data.data.results[0].name;
+            heroDescriptionP.textContent = data.data.results[0].description;
+            getHeroGif(searchInput);
+
+            heroNameDisplay.appendChild(heroNameTitle);
+            heroNameDisplay.appendChild(heroDescriptionP);
+            heroNameDisplay.classList.remove("hidden");
+            heroNameDisplay.classList.add("visible");
+            buttonsDiv.classList.remove("hidden");
+            buttonsDiv.classList.add("visible");
           }
-
-          heroNameTitle.textContent = data.data.results[0].name;
-          heroDescriptionP.textContent = data.data.results[0].description;
-          getHeroGif(searchInput);
-
-          heroNameDisplay.appendChild(heroNameTitle);
-          heroNameDisplay.appendChild(heroDescriptionP);
-          heroNameDisplay.classList.remove("hidden");
-          heroNameDisplay.classList.add("visible");
-          buttonsDiv.classList.remove("hidden");
-          buttonsDiv.classList.add("visible");
         });
       }
     })
@@ -87,7 +85,7 @@ const getHeroName = function (searchInput) {
     });
 };
 
-// function to generate hero gif. GIPHY API
+// function to generate hero gif. fetch from GIPHY API
 const getHeroGif = function (searchInput) {
   let gifUrl =
     "https://api.giphy.com/v1/gifs/search?api_key=S3HuUjpb6Y7vXd6wE7kLLaqZ5hY4QeZC&q=" +
@@ -109,7 +107,7 @@ const getHeroGif = function (searchInput) {
     });
 };
 
-//  function to fetch data for hero additional info: comics, stories, events. data retrieved from Matvel API.
+//  function to display more hero data: comics, stories, events. fetch from Marvel API.
 const comicsBtnDisplay = function () {
   let comicsUrl =
     "https://gateway.marvel.com/v1/public/characters?name=" +
@@ -182,7 +180,7 @@ const eventsBtnDisplay = function () {
     });
 };
 
-// function for displaying movie search
+// function for displaying hero appearances in movies. fetch from OMDB API
 const movieBtnDisplay = function (searchInput) {
   let movieUrl =
     "https://www.omdbapi.com/?apikey=6aedd9f1&type=movie&s=" + searchInput;
@@ -237,8 +235,23 @@ const InputHandler = function () {
       }
     };
   }
+
+  // if (searchInput == null) {
+  //   noHeroModal.style.display = "block";
+
+  //   modalHeroOkBtn.onclick = function () {
+  //     noHeroModal.style.display = "none";
+  //   };
+
+  //   window.onclick = function (event) {
+  //     if (event.target == noHeroModal) {
+  //       noHeroModal.style.display = "none";
+  //     }
+  //   };
+  // }
 };
 
+// function to handler button clicks for hero data
 const buttonsHandler = function (e) {
   let clickedBtn = e.target;
   if (clickedBtn.textContent == comicsBtn.textContent) {
@@ -256,6 +269,7 @@ const buttonsHandler = function (e) {
   }
 };
 
+// function to check if super team has limit of members and push to team array
 const addToSelectedHeroes = function (hero) {
   if (selectedHeroes.length >= 5) {
     return;
@@ -263,6 +277,7 @@ const addToSelectedHeroes = function (hero) {
   selectedHeroes.push(hero);
 };
 
+// function at add hero to super dream team
 const addTeamMember = function () {
   // generate p element and assign it the input.value and push to array
   if (!addHeroInput.value) {
@@ -280,6 +295,7 @@ const addTeamMember = function () {
     return;
   }
 
+  // function to clear add member input and close modal.
   getHeroScore(addHeroInput.value).then(function (hero) {
     if (!hero) {
       // alert("No hero");
@@ -310,6 +326,7 @@ const addTeamMember = function () {
   });
 };
 
+// function to render selected team on page
 const renderSelectedHeroes = function () {
   selectedHeroesContainer.innerHTML = "";
   for (const hero of selectedHeroes) {
@@ -319,12 +336,14 @@ const renderSelectedHeroes = function () {
   }
 };
 
+// function to hide input after team is displayed
 const displayChooseTeam = function () {
   // when we have 5 members disable input + add title, input, btn to add team
   chooseHeroesContainer.classList.add("hidden");
   chooseTeamNameContainer.classList.remove("hidden");
 };
 
+// function to get hero score for scoreboard of super team. fetch from Marvel API.
 const getHeroScore = function (heroName) {
   let url =
     "https://gateway.marvel.com/v1/public/characters?name=" +
@@ -346,8 +365,8 @@ const getHeroScore = function (heroName) {
     });
 };
 
+// function to create object for team for scoreboard localStorage
 const saveTeam = function () {
-  // create object for team for localStorage
   const addScores = function () {
     let sum = 0;
     for (let i = 0; i < selectedHeroes.length; i++) {
@@ -369,6 +388,7 @@ const saveTeam = function () {
   teamNameTitle.textContent = "Check out the scoreboard!";
 };
 
+// event handlers
 buttonsDiv.addEventListener("click", buttonsHandler);
 searchBtn.addEventListener("click", InputHandler);
 addHeroBtn.addEventListener("click", addTeamMember);

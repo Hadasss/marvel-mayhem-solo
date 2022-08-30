@@ -1,3 +1,7 @@
+* {
+  font-family: bangers;
+}
+
 .hidden {
   display: none;
 }
@@ -14,6 +18,10 @@ header-img {
   height: auto;
 }
 
+.search-hero {
+  justify-content: center;
+}
+
 .hero-name-display h3 {
   color: red;
   text-shadow: 2px 2px black;
@@ -25,15 +33,16 @@ header-img {
   text-shadow: 1px 1px white;
 }
 
-.flex-wrap button {
+.events,
+.comics,
+.movie-appearances {
+  background-color: green;
   color: white;
-  text-shadow: 2px 2px black;
-}
-
-.button-title {
-  color: yellow;
-  text-shadow: 2px 2px black;
-  font-size: 150%;
+  text-shadow: 1px 1px red;
+  box-shadow: 2px 2px 3px black !important;
+  border-radius: 4px;
+  padding: 2px 7px;
+  margin-bottom: 10px !important;
 }
 
 .comics-li,
@@ -68,6 +77,12 @@ header-img {
 .add-hero-btn,
 .add-team {
   background-color: red;
+}
+
+.search-bttn,
+.add-hero-btn,
+.add-team,
+.score-board {
   text-shadow: 1px 1px white;
   box-shadow: 2px 2px 3px black;
   border-radius: 4px;
@@ -75,7 +90,8 @@ header-img {
 }
 
 .teamName,
-.add-hero {
+.add-hero,
+.hero-search-input {
   box-shadow: 2px 2px 3px black;
   border-radius: 4px;
   padding: 2px 7px;

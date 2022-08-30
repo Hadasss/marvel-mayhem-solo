@@ -12,15 +12,9 @@
       href="https://fonts.googleapis.com/css?family=Bangers:regular"
       rel="stylesheet"
     />
-    <a href="https://www.vecteezy.com/free-vector/comic"></a>
-    <style>
-      body {
-        font-family: "Bangers", sans-serif;
-      }
-    </style>
   </head>
 
-  <body class="bg-stone-50">
+  <body>
     <header
       class="flex justify-center underline text-8xl p-10 border-4 border-black m-2 bg-scroll bg-cover bg-bottom-left text-red-600"
       style="background-image: url(./assets/images/header-img)"
@@ -29,24 +23,36 @@
     </header>
 
     <section
-      class="flex justify-center border-4 border-black m-2 p-9 shadow-2xl bg-fit bg-center"
+      class="flex flex-col justify-center border-4 border-black m-2 p-9 shadow-2xl bg-fit bg-center"
       style="background-image: url(./assets/images/comis-background-1.jpg)"
     >
+      <div class="search-hero flex">
+        <form class="p-3">
+          <label for="book-input"></label>
+          <input
+            type="text"
+            id="book-name"
+            placeholder="Search for Superhero!"
+            class="hero-search-input text-xl p-2"
+          />
+        </form>
+
+        <button
+          class="search-bttn bg-stone-50 hover:bg-blue-300 text-xl p-2 m-3"
+          type="button"
+          id="search-btn"
+        >
+          Search
+        </button>
+      </div>
+
       <button
-        class="score-board bg-stone-50 hover:bg-blue-800 rounded-md text-purple text-2xl p-1 shadow-2xl"
+        class="score-board bg-stone-50 hover:bg-blue-300 text-xl p-2 m{1|3|3|3}"
       >
         <a href="./scores.html">Score Board</a>
       </button>
-      <form class="p-2">
-        <label for="book-input"></label>
-        <input
-          type="text"
-          id="book-name"
-          placeholder="Search for Superhero!"
-          class="hero-search-input"
-        />
-      </form>
-      <!-- here -->
+
+      <!-- Modal for empty search input -->
       <div
         class="fixed hidden inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
         id="empty-search"
@@ -55,7 +61,9 @@
           class="relative top-80 mx-auto border w-80 shadow-lg rounded-md bg-white"
         >
           <div class="mt-3 text-center">
-            <h3 class="text-lg leading-6 font-medium text-gray-900">Error!</h3>
+            <h3 class="text-lg leading-6 font-medium text-gray-900">
+              You forgot something!
+            </h3>
             <div class="px-7">
               <p class="text-sm text-gray-500">Please type a superhero name!</p>
             </div>
@@ -71,6 +79,7 @@
         </div>
       </div>
 
+      <!-- Modal for wrong hero name -->
       <div
         class="fixed hidden inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
         id="no-hero"
@@ -79,7 +88,9 @@
           class="relative top-80 mx-auto border w-80 shadow-lg rounded-md bg-white"
         >
           <div class="mt-3 text-center">
-            <h3 class="text-lg leading-6 font-medium text-gray-900">Error!</h3>
+            <h3 class="text-lg leading-6 font-medium text-gray-900">
+              Mmmmm... Are you sure?
+            </h3>
             <div class="px-7">
               <p class="text-sm text-gray-500">No Marvel hero by that name!</p>
             </div>
@@ -94,16 +105,6 @@
           </div>
         </div>
       </div>
-
-      <!-- here -->
-
-      <button
-        type="button"
-        class="bg-stone-50 hover:bg-blue-800 rounded-md text-purple text-2xl p-1 shadow-2xl search-bttn"
-        id="search-btn"
-      >
-        Search
-      </button>
     </section>
 
     <div
@@ -117,24 +118,16 @@
       class="extra-info flex-wrap border-4 border-black bg-local bg-bottom-right m-2 p-10 text-red-600"
       style="background-image: url(./assets/images/comics-background-2.jpg)"
     >
-      <div class="flex-wrap buttons hidden" id="buttons">
-        <button
-          type="button"
-          class="hover:bg-blue-800 rounded-md text-purple text-3xl shadow-2xl p-5 m-3 comics border-solid border-4 border-amber-300"
-        >
+      <div class="flex-wrap buttons" id="buttons">
+        <button class="comics hover:bg-yellow-500 text-xl p-2 m-1">
           COMICS
         </button>
 
-        <button
-          type="button"
-          class="hover:bg-blue-800 rounded-md text-purple text-3xl shadow-2xl p-5 m-3 events border-solid border-4 border-amber-300"
-        >
+        <button class="events bg hover:bg-yellow-500 text-xl p-2 m-1">
           EVENTS
         </button>
-        <button
-          type="button"
-          class="hover:bg-blue-800 rounded-md text-purple text-3xl shadow-2xl p-5 m-3 movie-appearances border-solid border-4 border-amber-300"
-        >
+
+        <button class="movie-appearances hover:bg-yellow-500 text-xl p-2 m-1">
           MOVIES
         </button>
       </div>
@@ -144,7 +137,7 @@
       class="teams-container"
       style="background-image: url(./assets/images/back.jpg)"
     >
-      <!-- here -->
+      <!-- Modal to add team member  -->
       <div
         class="fixed hidden inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
         id="empty-member"
@@ -153,7 +146,9 @@
           class="relative top-80 mx-auto border w-80 shadow-lg rounded-md bg-white"
         >
           <div class="mt-3 text-center">
-            <h3 class="text-lg leading-6 font-medium text-gray-900">Error!</h3>
+            <h3 class="text-lg leading-6 font-medium text-gray-900">
+              You forgot something!
+            </h3>
             <div class="px-7">
               <p class="text-sm text-gray-500">Type a team member name!</p>
             </div>
@@ -169,12 +164,10 @@
         </div>
       </div>
 
-      <!-- here -->
-
       <div class="build-team flex justify-center m-5">
         <h2 class="build-title pr-7">Build your super dream team!</h2>
         <div class="choose-heroes">
-          <p>Write the names of 5 heroes you want on your team.</p>
+          <p>Choose 5 heroes you want on your team.</p>
           <input type="text" placeholder="add Superhero!" class="add-hero" />
           <button class="add-hero-btn">ADD</button>
         </div>
@@ -182,7 +175,7 @@
         <ul class="selected-heroes"></ul>
 
         <div class="choose-team-name hidden">
-          <h3 class="team-name-title">Choose a name for your team</h3>
+          <h3 class="team-name-title">What is your team name?</h3>
           <input class="teamName" type="text" placeholder="Team Name Here" />
           <button class="add-team">Add Team</button>
         </div>
