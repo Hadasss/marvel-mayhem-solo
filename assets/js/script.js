@@ -391,6 +391,6 @@ formInput.addEventListener("keypress", function (e) {
 addHeroInput.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
     e.preventDefault();
-    document.getElementById("add-hero-btn").click();
+    document.getElementById("add-hero-id").click();
   }
 });
