@@ -18,6 +18,10 @@ let searchInput;
 const heroNameTitle = document.createElement("h3");
 const heroDescriptionP = document.createElement("p");
 const buttonsContentDiv = document.createElement("div");
+
+const noTypedHeroModal = document.getElementById("no-typed-hero");
+const noTypedHeroBtn = document.getElementById("ok-modal-btn");
+
 const teamsContainerDiv = document.querySelector(".teams-container");
 const addHeroInput = document.querySelector(".add-hero");
 const addHeroBtn = document.querySelector(".add-hero-btn");
@@ -118,24 +122,38 @@ const comicsBtnDisplay = function () {
     .then(function (response) {
       if (response.ok) {
         response.json().then(function (data) {
-          let comicsTitle = document.createElement("h3");
-          comicsTitle.classList.add("button-title");
-          comicsTitle.textContent = "Your hero appeared in these issues:";
-          const comicsUl = document.createElement("ul");
+          if (data.data.count == 0) {
+            noTypedHeroModal.style.display = "block";
 
-          for (let i = 0; i < 10; i++) {
-            const randomIndex = Math.floor(Math.random() * 20);
-            let comicBookLi = document.createElement("li");
-            comicBookLi.classList.add("comics-li");
-            comicBookLi.textContent =
-              data.data.results[0].comics.items[randomIndex].name;
-            comicsUl.appendChild(comicBookLi);
+            noTypedHeroBtn.onclick = function () {
+              noTypedHeroModal.style.display = "none";
+            };
+
+            window.onclick = function (event) {
+              if (event.target == noTypedHeroModal) {
+                noTypedHeroModal.style.display = "none";
+              }
+            };
+          } else {
+            let comicsTitle = document.createElement("h3");
+            comicsTitle.classList.add("button-title");
+            comicsTitle.textContent = "Your hero appeared in these issues:";
+            const comicsUl = document.createElement("ul");
+
+            for (let i = 0; i < 10; i++) {
+              const randomIndex = Math.floor(Math.random() * 20);
+              let comicBookLi = document.createElement("li");
+              comicBookLi.classList.add("comics-li");
+              comicBookLi.textContent =
+                data.data.results[0].comics.items[randomIndex].name;
+              comicsUl.appendChild(comicBookLi);
+            }
+
+            buttonsContentDiv.appendChild(comicsTitle);
+            buttonsContentDiv.appendChild(comicsUl);
+            buttonsDiv.appendChild(buttonsContentDiv);
+            extraInfoDiv.appendChild(buttonsDiv);
           }
-
-          buttonsContentDiv.appendChild(comicsTitle);
-          buttonsContentDiv.appendChild(comicsUl);
-          buttonsDiv.appendChild(buttonsContentDiv);
-          extraInfoDiv.appendChild(buttonsDiv);
         });
       }
     })
@@ -154,24 +172,38 @@ const eventsBtnDisplay = function () {
     .then(function (response) {
       if (response.ok) {
         response.json().then(function (data) {
-          let eventsTitle = document.createElement("h3");
-          eventsTitle.classList.add("button-title");
-          eventsTitle.textContent = "Your hero took part in these events:";
-          const eventsUl = document.createElement("ul");
+          if (data.data.count == 0) {
+            noTypedHeroModal.style.display = "block";
 
-          for (let i = 0; i < 10; i++) {
-            let randomIndex = Math.floor(Math.random() * 20);
-            let eventsLi = document.createElement("li");
-            eventsLi.classList.add("events-li");
-            eventsLi.textContent =
-              data.data.results[0].events.items[randomIndex].name;
-            eventsUl.appendChild(eventsLi);
+            noTypedHeroBtn.onclick = function () {
+              noTypedHeroModal.style.display = "none";
+            };
+
+            window.onclick = function (event) {
+              if (event.target == noTypedHeroModal) {
+                noTypedHeroModal.style.display = "none";
+              }
+            };
+          } else {
+            let eventsTitle = document.createElement("h3");
+            eventsTitle.classList.add("button-title");
+            eventsTitle.textContent = "Your hero took part in these events:";
+            const eventsUl = document.createElement("ul");
+
+            for (let i = 0; i < 10; i++) {
+              let randomIndex = Math.floor(Math.random() * 20);
+              let eventsLi = document.createElement("li");
+              eventsLi.classList.add("events-li");
+              eventsLi.textContent =
+                data.data.results[0].events.items[randomIndex].name;
+              eventsUl.appendChild(eventsLi);
+            }
+
+            buttonsContentDiv.appendChild(eventsTitle);
+            buttonsContentDiv.appendChild(eventsUl);
+            buttonsDiv.appendChild(buttonsContentDiv);
+            extraInfoDiv.appendChild(buttonsDiv);
           }
-
-          buttonsContentDiv.appendChild(eventsTitle);
-          buttonsContentDiv.appendChild(eventsUl);
-          buttonsDiv.appendChild(buttonsContentDiv);
-          extraInfoDiv.appendChild(buttonsDiv);
         });
       }
     })
@@ -190,22 +222,37 @@ const movieBtnDisplay = function (searchInput) {
       if (response.ok) {
         response.json().then(function (data) {
           console.log(data);
-          //console.log(data.Search[5]);
-          let movieTitle = document.createElement("h3");
-          movieTitle.classList.add("button-title");
-          movieTitle.textContent = "Your hero took part in these movies:";
-          const movieUl = document.createElement("ul");
 
-          for (let i = 0; i < 10; i++) {
-            let movieLi = document.createElement("li");
-            movieLi.classList.add("movies-li");
-            movieLi.textContent = `${data.Search[i].Title} (${data.Search[i].Year})`;
-            movieUl.appendChild(movieLi);
+          if (searchInput == undefined) {
+            noTypedHeroModal.style.display = "block";
+
+            noTypedHeroBtn.onclick = function () {
+              noTypedHeroModal.style.display = "none";
+            };
+
+            window.onclick = function (event) {
+              if (event.target == noTypedHeroModal) {
+                noTypedHeroModal.style.display = "none";
+              }
+            };
+          } else {
+            //console.log(data.Search[5]);
+            let movieTitle = document.createElement("h3");
+            movieTitle.classList.add("button-title");
+            movieTitle.textContent = "Your hero took part in these movies:";
+            const movieUl = document.createElement("ul");
+
+            for (let i = 0; i < 10; i++) {
+              let movieLi = document.createElement("li");
+              movieLi.classList.add("movies-li");
+              movieLi.textContent = `${data.Search[i].Title} (${data.Search[i].Year})`;
+              movieUl.appendChild(movieLi);
+            }
+            buttonsContentDiv.appendChild(movieTitle);
+            buttonsContentDiv.appendChild(movieUl);
+            buttonsDiv.appendChild(buttonsContentDiv);
+            extraInfoDiv.appendChild(buttonsDiv);
           }
-          buttonsContentDiv.appendChild(movieTitle);
-          buttonsContentDiv.appendChild(movieUl);
-          buttonsDiv.appendChild(buttonsContentDiv);
-          extraInfoDiv.appendChild(buttonsDiv);
         });
       }
     })
