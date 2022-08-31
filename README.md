@@ -32,26 +32,25 @@ There are no tests for this program.
 
 - Javascript
 - ES6
-- RESTful API
+- RESTful APIs
+- localStorage
 - HTML
 - CSS
 - Tailwind
 
 ## Screenshots
+![image](https://user-images.githubusercontent.com/80355222/187789484-35eb5091-a511-4920-ba37-cfded6bbaf8b.png)
+![image](https://user-images.githubusercontent.com/80355222/187789557-0115769c-e272-4507-97b1-7b2288da24c6.png)
+![image](https://user-images.githubusercontent.com/80355222/187789685-5abb32fc-7537-4c8b-bf6e-3c49580305bf.png)
+![image](https://user-images.githubusercontent.com/80355222/187789780-c61a84f5-3482-4819-81ff-117692e5668f.png)
+![image](https://user-images.githubusercontent.com/80355222/187789844-4186ec45-fe20-40a3-8915-fa2c5549d49b.png)
+![image](https://user-images.githubusercontent.com/80355222/187789897-b04e9385-f008-43a8-b687-5af427aa6f94.png)
 
-![image](https://user-images.githubusercontent.com/80355222/153730598-9c9aea3f-8e3b-4c32-8fda-b7909c62c890.png)
 
-![image](https://user-images.githubusercontent.com/80355222/153730630-2ae4becf-0825-487d-ab95-d733390e5208.png)
-
-![image](https://user-images.githubusercontent.com/80355222/153730685-93a7c2b1-d33d-4c8d-ac7e-0a1b65bdf015.png)
-
-![image](https://user-images.githubusercontent.com/80355222/153730614-8112cfe8-6387-4a85-adc4-70a57c70bd63.png)
-
-![image](https://user-images.githubusercontent.com/80355222/153730735-b4712ae2-3a6b-49bc-b563-50b2f949b588.png)
 
 ## Deployment
 
-https://hadasss.github.io/movified/
+https://hadasss.github.io/marvel-mayhem-solo/index.html
 
 ## Questions
 
