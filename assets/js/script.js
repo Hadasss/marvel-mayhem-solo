@@ -394,3 +394,10 @@ addHeroInput.addEventListener("keypress", function (e) {
     document.getElementById("add-hero-id").click();
   }
 });
+
+teamNameInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    document.getElementById("add-team-name").click();
+  }
+});

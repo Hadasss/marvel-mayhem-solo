@@ -1,9 +1,9 @@
 # Marvel Mayhem
 
 ## Project Description
+
 A mobile friendly responsive app that pulls and displays data from 3 separate APIs:
 Giphy, Marvel, OMDB.
-
 
 ## Table Of Contents
 
@@ -20,11 +20,12 @@ Giphy, Marvel, OMDB.
 Live server / Open in browser
 
 ## Usage
-Search for your favorite Marvel superhero appearances in comic books and movies and get some fun gifs too!  
-Bonus: build super teams and see which team scores the highest! Scores are based on number of appearances in comics. 
 
+Search for your favorite Marvel superhero appearances in comic books and movies and get some fun gifs too!  
+Bonus: build super teams and see which team scores the highest! Scores are based on number of appearances in comics.
 
 ## Tests
+
 There are no tests for this program.
 
 ## Technologies
@@ -34,11 +35,10 @@ There are no tests for this program.
 - RESTful API
 - HTML
 - CSS
-- Bulma
 - Tailwind
 
-
 ## Screenshots
+
 ![image](https://user-images.githubusercontent.com/80355222/153730598-9c9aea3f-8e3b-4c32-8fda-b7909c62c890.png)
 
 ![image](https://user-images.githubusercontent.com/80355222/153730630-2ae4becf-0825-487d-ab95-d733390e5208.png)
