@@ -1,20 +1,30 @@
 body,
 button {
   font-family: "Bangers", sans-serif;
-  padding: 0;
-  margin: 5px;
+}
+
+.button {
+  background-color: red;
+  box-shadow: 3px 5px 7px black;
+  text-shadow: 1px 1px white;
+  box-shadow: 2px 2px 3px black;
+  border-radius: 4px;
+  padding: 2px 7px;
 }
 
 .title-container {
+  display: flex;
+  justify-content: center;
   margin: 2% 0 1% 0;
   padding: 15px;
-  height: 30vh;
+  height: 20vh;
   text-align: center;
   border: 5px solid black;
 }
 
 .main-title {
   text-shadow: 2px 2px red;
+  align-self: center;
 }
 
 .secondary-title {
@@ -33,7 +43,14 @@ button {
   text-shadow: 2px 2px black;
 }
 
-.back {
-  background-color: red;
-  box-shadow: 3px 5px 7px black;
+.team-name {
+  margin: 5px;
+}
+
+.tag {
+  margin-left: 10px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 3px;
 }

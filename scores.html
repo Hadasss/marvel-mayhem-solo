@@ -14,25 +14,25 @@
       href="https://fonts.googleapis.com/css?family=Bangers:regular"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/scores.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body>
+  <body class="m-2">
 
-    <header columns>
+    <header>
 
-      <button class="back button"><a href="./index.html">Back to Main Page</a></button>
+      <button class="back button bg-red hover:bg-red-400"><a href="./index.html">Back to Main Page</a></button>
   
       <div class="board-container">
-        <div class="title-container is-full" style="background-image: url(./assets/images/back.jpg);">
-          <h1 class="main-title title is-1">Behold! Earth's mightiest heroes!</h2>
+        <div class="title-container" style="background-image: url(./assets/images/back.jpg);">
+          <h1 class="main-title text-5xl">Behold! Earth's mightiest heroes!</h2>
           </div>
         </div>
       </header>
       
       <div class="scores-container" style="background-image: url(./assets/images/back5.jpg)">
-        <h4 class="secondary-title title is-2">Top Super Teams:</h2>
+        <h4 class="secondary-title text-3xl mb-4">Top Super Teams:</h2>
         <ol class="teams-list"></ol>
       </div>
     </div>
