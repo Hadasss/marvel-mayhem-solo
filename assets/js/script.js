@@ -379,3 +379,18 @@ buttonsDiv.addEventListener("click", buttonsHandler);
 searchBtn.addEventListener("click", InputHandler);
 addHeroBtn.addEventListener("click", addTeamMember);
 addTeamBtn.addEventListener("click", saveTeam);
+
+// functions to enable buttons on "Enter"
+formInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    document.getElementById("search-btn").click();
+  }
+});
+
+addHeroInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    document.getElementById("add-hero-btn").click();
+  }
+});
