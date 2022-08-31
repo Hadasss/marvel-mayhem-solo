@@ -6,7 +6,7 @@ const noHeroModal = document.getElementById("no-hero");
 const modalHeroOkBtn = document.getElementById("ok-hero-btn");
 const addMemberModal = document.getElementById("empty-member");
 const modalMemberOkBtn = document.getElementById("ok-member-btn");
-let formInput = document.querySelector("#book-name");
+let formInput = document.querySelector("#hero-name");
 const heroNameDisplay = document.querySelector(".hero-name-display");
 let heroGif = document.querySelector(".hero-gif");
 const extraInfoDiv = document.querySelector(".extra-info");
@@ -217,6 +217,7 @@ const movieBtnDisplay = function (searchInput) {
 // function to handle user input for first fetch.
 const InputHandler = function () {
   buttonsContentDiv.innerHTML = "";
+
   searchInput = formInput.value.trim();
 
   if (searchInput) {
@@ -235,20 +236,6 @@ const InputHandler = function () {
       }
     };
   }
-
-  // if (searchInput == null) {
-  //   noHeroModal.style.display = "block";
-
-  //   modalHeroOkBtn.onclick = function () {
-  //     noHeroModal.style.display = "none";
-  //   };
-
-  //   window.onclick = function (event) {
-  //     if (event.target == noHeroModal) {
-  //       noHeroModal.style.display = "none";
-  //     }
-  //   };
-  // }
 };
 
 // function to handler button clicks for hero data
@@ -277,9 +264,8 @@ const addToSelectedHeroes = function (hero) {
   selectedHeroes.push(hero);
 };
 
-// function at add hero to super dream team
+// function to trigger modal if there's no value in user input
 const addTeamMember = function () {
-  // generate p element and assign it the input.value and push to array
   if (!addHeroInput.value) {
     addMemberModal.style.display = "block";
 

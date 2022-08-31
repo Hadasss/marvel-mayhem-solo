@@ -33,6 +33,10 @@ header-img {
   text-shadow: 1px 1px white;
 }
 
+.hero-name-display img {
+  border: solid 5px purple;
+}
+
 .events,
 .comics,
 .movie-appearances {
@@ -41,7 +45,6 @@ header-img {
   text-shadow: 1px 1px red;
   box-shadow: 2px 2px 3px black !important;
   border-radius: 4px;
-  padding: 2px 7px;
   margin-bottom: 10px !important;
 }
 
@@ -63,7 +66,7 @@ header-img {
 }
 
 .build-title {
-  font-size: 150%;
+  font-size: 1.5em;
   color: blue;
   text-shadow: 2px 2px white;
   text-align: center;
@@ -87,6 +90,14 @@ header-img {
   box-shadow: 2px 2px 3px black;
   border-radius: 4px;
   padding: 2px 7px;
+}
+
+.score-board {
+  background-color: #4260f5;
+  color: #f5ec42;
+  text-shadow: 1px 1px black;
+  width: 60vw;
+  align-self: center;
 }
 
 .teamName,

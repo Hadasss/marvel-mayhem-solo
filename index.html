@@ -16,29 +16,29 @@
 
   <body>
     <header
-      class="flex justify-center underline text-8xl p-10 border-4 border-black m-2 bg-scroll bg-cover bg-bottom-left text-red-600"
+      class="flex justify-center underline text-8xl p-12 border-4 border-black m-2 bg-scroll bg-cover bg-bottom-left text-red-600"
       style="background-image: url(./assets/images/header-img)"
     >
-      Marvel Mayhem
+      <h1 class="backdrop-blur-sm">Marvel Mayhem</h1>
     </header>
 
     <section
       class="flex flex-col justify-center border-4 border-black m-2 p-9 shadow-2xl bg-fit bg-center"
-      style="background-image: url(./assets/images/comis-background-1.jpg)"
+      style="background-image: url(./assets/images/comics-background-1.jpg)"
     >
       <div class="search-hero flex">
         <form class="p-3">
-          <label for="book-input"></label>
+          <label for="hero-input"></label>
           <input
             type="text"
-            id="book-name"
+            id="hero-name"
             placeholder="Search for Superhero!"
             class="hero-search-input text-xl p-2"
           />
         </form>
 
         <button
-          class="search-bttn bg-stone-50 hover:bg-blue-300 text-xl p-2 m-3"
+          class="search-bttn bg-white hover:bg-blue-300 text-xl p-2 m-3"
           type="button"
           id="search-btn"
         >
@@ -46,9 +46,7 @@
         </button>
       </div>
 
-      <button
-        class="score-board bg-stone-50 hover:bg-blue-300 text-xl p-2 m{1|3|3|3}"
-      >
+      <button class="score-board hover:bg-blue-300 text-xl p-2 m-3">
         <a href="./scores.html">Score Board</a>
       </button>
 
@@ -109,7 +107,7 @@
 
     <div
       class="hero-name-display hidden flex-wrap border-4 border-black text-red-600 m-2 p-10"
-      style="background-image: url(./assets/images/comis-background-1.jpg)"
+      style="background-image: url(./assets/images/comics-background-1.jpg)"
     >
       <img class="hero-gif" src="#" />
     </div>
@@ -165,19 +163,27 @@
       </div>
 
       <div class="build-team flex justify-center m-5">
-        <h2 class="build-title pr-7">Build your super dream team!</h2>
+        <h1 class="build-title m-2">Build your super dream team!</h1>
         <div class="choose-heroes">
-          <p>Choose 5 heroes you want on your team.</p>
-          <input type="text" placeholder="add Superhero!" class="add-hero" />
-          <button class="add-hero-btn">ADD</button>
+          <p class="m-1">Choose 5 heroes you want on your team.</p>
+          <input
+            type="text"
+            placeholder="add Superhero!"
+            class="add-hero mr-2 text-xl"
+          />
+          <button class="add-hero-btn hover:bg-blue-700 text-xl">ADD</button>
         </div>
 
         <ul class="selected-heroes"></ul>
 
         <div class="choose-team-name hidden">
-          <h3 class="team-name-title">What is your team name?</h3>
-          <input class="teamName" type="text" placeholder="Team Name Here" />
-          <button class="add-team">Add Team</button>
+          <h3 class="team-name-title m-2">What is your team name?</h3>
+          <input
+            class="teamName text-xl"
+            type="text"
+            placeholder="Team Name Here"
+          />
+          <button class="add-team hover:bg-blue-700 text-xl">Add Team</button>
         </div>
       </div>
     </div>
